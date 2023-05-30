@@ -1,0 +1,90 @@
+<!-- Topbar Start -->
+<div class="navbar-custom">
+    <div class="container-fluid">
+        <ul class="list-unstyled topnav-menu float-end mb-0">
+            <!-- full screen button -->
+            <li class="dropdown d-none d-lg-inline-block">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light maximize-icon"
+                    href="javascript:void(0)" (click)="toggleFullScreen()">
+                    <i class="fe-maximize noti-icon"></i>
+                </a>
+            </li>
+            <!-- profile menu -->
+            <li class="dropdown notification-list  topbar-dropdown" ngbDropdown>
+                <a ngbDropdownToggle class="nav-link nav-user  me-0 waves-effect waves-light" id="profileMenuDropdown"
+                    href="javascript:void(0)" aria-expanded="false">
+                    <span class="account-user-avatar">
+                        <img [src]="loggedInUser.avatar" alt="user-image" class="rounded-circle">
+                    </span>
+                    <span class="pro-user-name ms-1">
+                        {{loggedInUser.firstName}} <i class="mdi mdi-chevron-down"></i>
+                    </span>
+
+                </a>
+                <div ngbDropdownMenu aria-labelledby="profileMenuDropdown" class="dropdown-menu-end profile-dropdown">
+                    <!-- item -->
+                    <div ngbDropdownItem class="dropdown-header noti-title">
+                        <h6 class="text-overflow m-0">Bem vindo !</h6>
+                    </div>
+                    <!-- item -->
+                    <a *ngFor="let option of profileOptions;" class="notify-item" ngbDropdownItem>
+                        <i class="{{option.icon}} me-1"></i>
+                        <span style="cursor: pointer;" [routerLink]="option.redirectTo">{{option.label}}</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- LOGO -->
+        <div class="logo-box">
+            <a [routerLink]="'../tools'" class="logo logo-dark text-center">
+                <span class="logo-sm">
+                    <img src="../assets/images/notus-logo-black.png" alt="" height="22">
+                </span>
+                <span class="logo-lg">
+                    <img src="../assets/images/notus-logo-black.png" alt="" height="30" *ngIf="layoutType==='two-column'">
+                </span>
+            </a>
+
+            <a [routerLink]="'../tools'" class="logo logo-light text-center">
+                <span class="logo-sm">
+                    <img src="../assets/images/notus-logo-white.png" alt="" height="22">
+                </span>
+                <span class="logo-lg">
+                    <img src="../assets/images/notus-logo-white.png" alt="" height="20" *ngIf="layoutType==='two-column'">
+                </span>
+            </a>
+        </div>
+
+        <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+            <li>
+                <button class="button-menu-mobile waves-effect waves-light d-none d-lg-block"
+                    (click)="changeSidebarWidth()" *ngIf="layoutType!=='horizontal'">
+                    <i class="fe-menu"></i>
+                </button>
+            </li>
+
+            <li>
+                <button class="button-menu-mobile open-left d-block d-lg-none waves-effect waves-light"
+                    *ngIf="layoutType!=='horizontal'" (click)="toggleMobileMenu($event)">
+                    <i class="fe-menu"></i>
+                </button>
+            </li>
+
+            <li>
+                <!-- Mobile menu toggle (Horizontal Layout)-->
+                <a class="navbar-toggle nav-link" [ngClass]="{'open': topnavCollapsed}"
+                    (click)="toggleMobileMenu($event)" *ngIf="layoutType==='horizontal'">
+                    <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+                <!-- End mobile menu toggle-->
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- end Topbar -->
