@@ -40,3 +40,19 @@
     src: local('Cerebri-sans Bold'), url("../../../fonts/cerebrisans-bold.woff") format("woff");
     font-weight: 700;
 }
+@font-face {
+    font-family: "UnimedSans";
+    src: url("../../../fonts/UnimedSans-Black.eot");
+    src: local('UnimedSans'), url("../../../fonts/UnimedSans-Black.woff") format("woff");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "UnimedSans-Regular";
+    src: url("../../../fonts/UnimedSans-Regular.eot");
+    src: local('UnimedSans Regular'), url("../../../fonts/UnimedSans-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "UnimedSans-Light";
+    src: url("../../../fonts/UnimedSans-Light.eot");
+    src: local('UnimedSans Light'), url("../../../fonts/UnimedSans-Light.woff") format("woff");
+}

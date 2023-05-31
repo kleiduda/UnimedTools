@@ -502,21 +502,8 @@ const TWO_COl_MENU_ITEMS: MenuItem[] = [
         key: 'layouts',
         icon: 'home',
         label: 'Layouts',
-        isTitle: true,
-        children: [
-            {
-                key: 'register-layout',
-                label: 'Cadastrar Layout',
-                link: '/register-layout',
-                parentKey: 'layouts',
-            },
-            {
-                key: 'list-layouts',
-                label: 'Listar Layouts',
-                link: '/list-layout',
-                parentKey: 'layouts',
-            }
-        ],
+        isTitle: false,
+        link: '/tools'
     }
 ];
 

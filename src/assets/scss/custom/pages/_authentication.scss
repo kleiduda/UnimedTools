@@ -35,8 +35,8 @@ body.authentication-bg-pattern {
     min-height: 100vh;
     flex-direction: row;
     align-items: stretch;
-    background: $auth-img-bg center;
-    background-size: cover;
+    background: $auth-img-bg right;
+    background-size:contain;
 
     .auth-fluid-form-box {
         max-width: 480px;
@@ -79,7 +79,7 @@ body.authentication-bg-pattern {
 @include media-breakpoint-up(lg) {
     .auth-brand {
         position: absolute;
-        top: 3rem;
+        top: 20%;
     }
 }
 

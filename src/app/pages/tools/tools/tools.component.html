@@ -1,1 +1,26 @@
-<p>tools works!</p>
+<app-page-title [breadcrumbItems]="pageTitle" title=""></app-page-title>
+<div class="col-12">
+    <div class="card" style="height: 700px;">
+        <div class="card-body">
+            <span class="font-family-unimed" style="font-size: 30px; color: black;">Ferramentas de Apoio Unimed
+                Notus</span>
+            <div class="row">
+                <div class="col-md-3" *ngFor="let tools of toolsCards">
+                    <ng-container *ngTemplateOutlet="ToolsCard;context:{tools:tools}">
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #ToolsCard let-tools="tools">
+    <div class="card mb-0 mt-3 border border-dark rounded-0" [ngClass]="{'border-success': tools.id === 1}"
+        style="height: 161px; width: 368px;">
+        <div class="card-body">
+            <h5 class="mt-0"><a href="" class="text-dark">{{tools.title}}</a></h5>
+            <p class="font-family-unimed text-dark">{{tools.description}}</p>
+        </div> <!-- end card-body-->
+        <p class="card-text" style="margin-left: 25px;"><small class="text-muted">Versão: {{tools.version}}</small></p>
+    </div> <!-- end card-->
+</ng-template>
