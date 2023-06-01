@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
@@ -11,9 +11,8 @@ import { AuthenticationService } from 'src/app/core/service/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  signUpForm!: FormGroup;
+  signUpForm2!: FormGroup;
   formSubmitted: boolean = false;
-  showPassword: boolean = false;
   loading: boolean = false;
   error: string = '';
 
@@ -24,7 +23,7 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.signUpForm = this.fb.group({
+    this.signUpForm2 = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(4)]]
@@ -35,7 +34,7 @@ export class RegisterComponent implements OnInit {
    * convenience getter for easy access to form fields
    */
   get formValues() {
-    return this.signUpForm.controls;
+    return this.signUpForm2.controls;
   }
 
 
@@ -44,14 +43,14 @@ export class RegisterComponent implements OnInit {
    */
   onSubmit(): void {
     this.formSubmitted = true;
-    if (this.signUpForm.valid) {
+    if (this.signUpForm2.valid) {
       this.loading = true;
       this.authenticationService.signup(this.formValues.name?.value, this.formValues.email?.value, this.formValues.password?.value)
         .pipe(first())
         .subscribe(
           (data: any) => {
             // navigates to confirm mail screen
-            this.router.navigate(['/auth/confirm']);
+            this.router.navigate(['/auth/confirm2']);
           },
           (error: any) => {
             this.error = error;

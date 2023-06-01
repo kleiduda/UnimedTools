@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LockScreenComponent } from './lock-screen.component';
+import { LockScreen2Component } from './lock-screen.component';
 
-describe('LockScreenComponent', () => {
-  let component: LockScreenComponent;
-  let fixture: ComponentFixture<LockScreenComponent>;
+describe('LockScreen2Component', () => {
+  let component: LockScreen2Component;
+  let fixture: ComponentFixture<LockScreen2Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LockScreenComponent ]
+      declarations: [ LockScreen2Component ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LockScreenComponent);
+    fixture = TestBed.createComponent(LockScreen2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

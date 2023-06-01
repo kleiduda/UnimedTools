@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ubold-angular": {
+    "notus-tools-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -94,16 +94,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ubold-angular:build:production"
+              "browserTarget": "notus-tools-angular:build:production"
             },
             "development": {
-              "browserTarget": "ubold-angular:build:development"
+              "browserTarget": "notus-tools-angular:build:development"
             },
-            "es": {
-              "browserTarget": "ubold-angular:build:es"
-            },
-            "en": {
-              "browserTarget": "ubold-angular:build:en"
+            "br": {
+              "browserTarget": "notus-tools-angular:build:br"
             }
           },
           "defaultConfiguration": "development"
@@ -111,7 +108,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ubold-angular:build"
+            "browserTarget": "notus-tools-angular:build"
           }
         },
         "test": {
@@ -135,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "ubold-angular"
+  "defaultProject": "notus-tools-angular"
 }

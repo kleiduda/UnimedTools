@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmMailComponent implements OnInit {
 
+  currentYear!: number;
   constructor () { }
 
   ngOnInit(): void {
+    this.currentYear = Date.now();
   }
 
 }

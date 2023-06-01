@@ -12,8 +12,8 @@ function getUsers(): User[] {
     // array in session storage for registered users
     let users: User[] = JSON.parse(sessionStorage.getItem('users')!) || [
         {
-            id: 1, username: 'test', email: 'ubold@coderthemes.com', password: 'test', firstName: 'Geneva', lastName: 'Kennedy',
-            avatar: 'assets/images/users/user-1.jpg', location: 'California, USA', title: 'Admin Head'
+            id: 1, username: 'test', email: 'kleitonsfreitas@gmail.com', password: 'test', firstName: 'Kleiton', lastName: 'Freitas',
+            avatar: '', location: 'Indaiatuba - SP, BRA', title: 'Admin'
         }
     ];
     return users;
@@ -33,7 +33,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             // authenticate - public
             if (request.url.endsWith('/api/login') && request.method === 'POST') {
                 const user = users.find(x => x.email === request.body.email && x.password === request.body.password);
-                if (!user) { return error('Email or password is incorrect'); }
+                if (!user) { return error('Email ou senha incorreto'); }
                 return ok({
                     ...user,
                     name: user.firstName + ' ' + user.lastName,
@@ -44,12 +44,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             // store new user - public
             if (request.url.endsWith('/api/signup') && request.method === 'POST') {
                 const user = users.find(x => x.email === request.body.email && x.password === request.body.password);
-                if (user) { return error('User Already Exists'); }
+                if (user) { return error('Usuário já existe'); }
                 else {
                     let [firstName, lastName] = request.body.name.split(' ');
                     const newUser: User = {
                         id: users.length + 1, username: firstName, email: request.body.email, password: request.body.password, firstName: firstName, lastName: lastName,
-                        avatar: 'assets/images/users/avatar-5.jpg', location: 'California, USA', title: 'Admin'
+                        avatar: '', location: 'Curitiba - PR, BRA', title: 'Admin'
                     }
                     temp = [...users];
                     temp.push(newUser);

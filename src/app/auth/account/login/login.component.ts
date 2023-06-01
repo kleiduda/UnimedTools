@@ -11,26 +11,23 @@ import { AuthenticationService } from 'src/app/core/service/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  loginForm2!: FormGroup;
+  formSubmitted: boolean = false;
   loading: boolean = false;
   returnUrl: string = '/';
-
-  loginForm!: FormGroup;
-  formSubmitted: boolean = false;
   error: string = '';
-
   showPassword: boolean = false;
 
   constructor (
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private fb: FormBuilder
-  ) {
-  }
+    private fb: FormBuilder) { }
+
 
   ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      email: ['ubold@coderthemes.com', [Validators.required, Validators.email]],
+    this.loginForm2 = this.fb.group({
+      email: ['kleitonsfreitas@gmail.com', [Validators.required, Validators.email]],
       password: ['test', Validators.required]
     });
 
@@ -42,10 +39,9 @@ export class LoginComponent implements OnInit {
   }
 
   /**
- * convenience getter for easy access to form fields
- */
-  get formValues() { return this.loginForm.controls; }
-
+   * convenience getter for easy access to form fields
+   */
+  get formValues() { return this.loginForm2.controls; }
 
 
   /**
@@ -53,7 +49,7 @@ export class LoginComponent implements OnInit {
    */
   onSubmit(): void {
     this.formSubmitted = true;
-    if (this.loginForm.valid) {
+    if (this.loginForm2.valid) {
       this.loading = true;
       this.authenticationService.login(this.formValues.email?.value, this.formValues.password?.value)
         .pipe(first())

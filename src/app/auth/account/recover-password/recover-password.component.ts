@@ -8,8 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RecoverPasswordComponent implements OnInit {
 
-
-  resetPassswordForm!: FormGroup;
+  resetPassswordForm2!: FormGroup;
   formSubmitted: boolean = false;
   successMessage: string = "";
 
@@ -17,7 +16,7 @@ export class RecoverPasswordComponent implements OnInit {
   constructor (private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.resetPassswordForm = this.fb.group({
+    this.resetPassswordForm2 = this.fb.group({
       email: ['', [Validators.required, Validators.email]]
     });
   }
@@ -26,17 +25,19 @@ export class RecoverPasswordComponent implements OnInit {
  * convenience getter for easy access to form fields
  */
   get formValues() {
-    return this.resetPassswordForm.controls;
+    return this.resetPassswordForm2.controls;
   }
+
 
   /**
    * On form submit
    */
   onSubmit(): void {
     this.formSubmitted = true;
-    if (this.resetPassswordForm.valid) {
+    if (this.resetPassswordForm2.valid) {
       this.successMessage = "We have sent you an email containing a link to reset your password";
     }
   }
+
 
 }

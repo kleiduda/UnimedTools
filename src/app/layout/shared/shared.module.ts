@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
-import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SimplebarAngularModule } from 'simplebar-angular';
@@ -9,14 +8,12 @@ import { NgbAlertModule, NgbCollapseModule, NgbDropdownModule, NgbNavModule, Ngb
 import { RouterModule } from '@angular/router';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { FormsModule } from '@angular/forms';
-import { WidgetModule } from 'src/app/shared/widget/widget.module';
 
 
 
 @NgModule({
   declarations: [
     LeftSidebarComponent,
-    RightSidebarComponent,
     TopbarComponent,
     FooterComponent
   ],
@@ -30,12 +27,10 @@ import { WidgetModule } from 'src/app/shared/widget/widget.module';
     NgbProgressbarModule,
     NgbNavModule,
     SimplebarAngularModule,
-    ClickOutsideModule,
-    WidgetModule
+    ClickOutsideModule
   ],
   exports: [
     LeftSidebarComponent,
-    RightSidebarComponent,
     TopbarComponent,
     FooterComponent
   ]

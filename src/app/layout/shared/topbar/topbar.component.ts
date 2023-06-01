@@ -82,12 +82,12 @@ export class TopbarComponent implements OnInit {
       {
         label: 'Bloquear',
         icon: 'fe-lock',
-        redirectTo: '/auth/lock-screen2',
+        redirectTo: '/auth/lock-screen',
       },
       {
         label: 'Logout',
         icon: 'fe-log-out',
-        redirectTo: '/auth/login2',
+        redirectTo: '/auth/login',
       }
     ];
 

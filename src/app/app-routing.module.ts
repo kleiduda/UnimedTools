@@ -55,11 +55,6 @@ const routes: Routes = [
     path: 'error-500',
     component: PublicLayoutComponent,
     loadChildren: () => import('./pages/extra-pages/error500/error500.module').then(m => m.Error500Module)
-  },
-  {
-    path: 'landing',
-    component: PublicLayoutComponent,
-    loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule)
   }
 
 ];
