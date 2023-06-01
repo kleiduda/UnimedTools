@@ -3,7 +3,6 @@ import { NavigationEnd, Router } from '@angular/router';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 import { EventService } from 'src/app/core/service/event.service';
 import { AuthenticationService } from '../../../core/service/auth.service';
-import { MENU_ITEMS } from '../config/menu-meta';
 import { MenuItem } from '../models/menu.model';
 import { findAllParent, findMenuItem } from '../helper/utils';
 import feather from "feather-icons";
@@ -43,7 +42,7 @@ export class LeftSidebarComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.initMenu();
+    //this.initMenu();
     this.loggedInUser = this.authService.currentUser();
 
     this.eventService.subscribe('toggleTwoToneIcons', (enable) => {
@@ -76,12 +75,12 @@ export class LeftSidebarComponent implements OnInit, AfterViewInit {
     feather.replace();
   }
 
-  /**
-   * initialize menuitems
-   */
-  initMenu(): void {
-    this.menuItems = MENU_ITEMS;
-  }
+  // /**
+  //  * initialize menuitems
+  //  */
+  // initMenu(): void {
+  //   this.menuItems = MENU_ITEMS;
+  // }
 
   /**
    * activates menu

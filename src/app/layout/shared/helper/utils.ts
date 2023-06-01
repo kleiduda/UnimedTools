@@ -1,4 +1,4 @@
-import { LAYOUT_COLOR_DARK, LAYOUT_COLOR_LIGHT, LAYOUT_DETACHED, LAYOUT_HORIZONTAL, LAYOUT_TWO_COLUMN_MENU, LAYOUT_VERTICAL, LAYOUT_WIDTH_BOXED, LAYOUT_WIDTH_FLUID, LEFT_SIDEBAR_THEME_DARK, LEFT_SIDEBAR_THEME_LIGHT, LEFT_SIDEBAR_TYPE_CONDENSED, LEFT_SIDEBAR_TYPE_DEFAULT, MENU_POSITION_FIXED, MENU_POSITION_SCROLLABLE, TOPBAR_THEME_DARK, TOPBAR_THEME_LIGHT } from "../config/layout.model";
+import { LAYOUT_COLOR_DARK, LAYOUT_COLOR_LIGHT, LAYOUT_TWO_COLUMN_MENU, LAYOUT_WIDTH_BOXED, LAYOUT_WIDTH_FLUID, LEFT_SIDEBAR_THEME_DARK, LEFT_SIDEBAR_THEME_LIGHT, LEFT_SIDEBAR_TYPE_CONDENSED, LEFT_SIDEBAR_TYPE_DEFAULT, MENU_POSITION_FIXED, MENU_POSITION_SCROLLABLE, TOPBAR_THEME_DARK, TOPBAR_THEME_LIGHT } from "../config/layout.model";
 import { LayoutConfig } from "../models/layout-config.model";
 import { MenuItem } from "../models/menu.model";
 
@@ -73,11 +73,6 @@ const getLayoutConfig = (layoutType: string = 'vertical'): LayoutConfig => {
     }
 
     switch (layoutType) {
-        case LAYOUT_HORIZONTAL:
-            return config;
-        case LAYOUT_DETACHED:
-            config.showSidebarUserInfo = true;
-            return config;
         case LAYOUT_TWO_COLUMN_MENU:
             config.topbarTheme = TOPBAR_THEME_LIGHT;
             return config;

@@ -27,29 +27,9 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path: 'maintenance',
-    component: PublicLayoutComponent,
-    loadChildren: () => import('./pages/extra-pages/maintenance/maintenance.module').then(m => m.MaintenanceModule)
-  },
-  {
-    path: 'upcoming',
-    component: PublicLayoutComponent,
-    loadChildren: () => import('./pages/extra-pages/upcoming/upcoming.module').then(m => m.UpcomingModule)
-  },
-  {
     path: 'error-404',
     component: PublicLayoutComponent,
     loadChildren: () => import('./pages/extra-pages/error404/error404.module').then(m => m.Error404Module)
-  },
-  {
-    path: 'error-404-two',
-    component: PublicLayoutComponent,
-    loadChildren: () => import('./pages/extra-pages/error404two/error404two.module').then(m => m.Error404twoModule)
-  },
-  {
-    path: 'error-500-two',
-    component: PublicLayoutComponent,
-    loadChildren: () => import('./pages/extra-pages/error500two/error500two.module').then(m => m.Error500twoModule)
   },
   {
     path: 'error-500',

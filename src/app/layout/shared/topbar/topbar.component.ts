@@ -2,13 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AuthenticationService } from 'src/app/core/service/auth.service';
 import { EventService } from 'src/app/core/service/event.service';
 import { LEFT_SIDEBAR_TYPE_CONDENSED, LEFT_SIDEBAR_TYPE_DEFAULT } from '../config/layout.model';
-import { BrandItem } from '../models/brands.model';
 import { CreateNewMenuOption } from '../models/create-new.model';
-import { Language } from '../models/language.model';
-import { MegaMenuItem } from '../models/mega-menu.model';
-import { NotificationItem } from '../models/notification.model';
 import { ProfileOptionItem } from '../models/profileoption.model';
-import { SearchResultItem, SearchUserItem } from '../models/search.model';
 
 @Component({
   selector: 'app-topbar',
@@ -20,14 +15,7 @@ export class TopbarComponent implements OnInit {
   @Input() layoutType: string = '';
   @Input() leftSidebarTheme: string = 'light';
   createMenuOptions: CreateNewMenuOption[] = [];
-  megaMenuItems: MegaMenuItem[] = [];
-  notificationList: NotificationItem[] = [];
-  languages: Language[] = [];
-  brands: BrandItem[] = [];
   profileOptions: ProfileOptionItem[] = [];
-  selectedLanguage?: Language;
-  searchResults: SearchResultItem[] = [];
-  searchUsers: SearchUserItem[] = [];
 
   loggedInUser: any = {};
   topnavCollapsed: boolean = false;

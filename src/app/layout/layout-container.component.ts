@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { EventService } from '../core/service/event.service';
-import { LAYOUT_DETACHED, LAYOUT_HORIZONTAL, LAYOUT_TWO_COLUMN_MENU, LAYOUT_VERTICAL, LAYOUT_WIDTH_BOXED, LEFT_SIDEBAR_TYPE_CONDENSED, LEFT_SIDEBAR_TYPE_DEFAULT } from './shared/config/layout.model';
+import { LAYOUT_TWO_COLUMN_MENU, LAYOUT_WIDTH_BOXED, LEFT_SIDEBAR_TYPE_CONDENSED, LEFT_SIDEBAR_TYPE_DEFAULT } from './shared/config/layout.model';
 import { getLayoutConfig } from './shared/helper/utils';
 import { LayoutConfig } from './shared/models/layout-config.model';
 
@@ -82,28 +82,6 @@ export class LayoutContainerComponent implements OnInit, AfterViewInit {
       }
     }
   }
-
-  /**
-   * Check if the vertical layout is requested
-   */
-  isVerticalLayoutRequested() {
-    return this.layoutType === LAYOUT_VERTICAL;
-  }
-
-  /**
-   * Check if the horizontal layout is requested
-   */
-  isHorizontalLayoutRequested() {
-    return this.layoutType === LAYOUT_HORIZONTAL;
-  }
-
-  /**
-   * Check if the detached layout is requested
-   */
-  isDetachedLayoutRequested() {
-    return this.layoutType === LAYOUT_DETACHED;
-  }
-
   /**
    * Check if two column layout is requested
    */

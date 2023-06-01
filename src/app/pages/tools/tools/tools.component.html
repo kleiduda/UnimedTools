@@ -5,7 +5,7 @@
             <span class="font-family-unimed" style="font-size: 30px; color: black;">Ferramentas de Apoio Unimed
                 Notus</span>
             <div class="row">
-                <div class="col-md-4" *ngFor="let tools of toolsCards">
+                <div class="col-md-3" *ngFor="let tools of toolsCards">
                     <ng-container *ngTemplateOutlet="ToolsCard;context:{tools:tools}">
                     </ng-container>
                 </div>

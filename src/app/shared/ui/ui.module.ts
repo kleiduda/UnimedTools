@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { DefaultLayoutComponent } from './default-layout/default-layout.component';
 import { DefaultLayout2Component } from './default-layout2/default-layout2.component';
-import { CountdownDirective } from './count-down/countdown.directive';
 import { PortletCardComponent } from './portlet-card/portlet-card.component';
 
 
@@ -12,7 +11,6 @@ import { PortletCardComponent } from './portlet-card/portlet-card.component';
   declarations: [
     DefaultLayoutComponent,
     DefaultLayout2Component,
-    CountdownDirective,
     PortletCardComponent
   ],
   imports: [
@@ -22,7 +20,6 @@ import { PortletCardComponent } from './portlet-card/portlet-card.component';
   exports: [
     DefaultLayoutComponent,
     DefaultLayout2Component,
-    CountdownDirective,
     PortletCardComponent
   ]
 })
