@@ -2,7 +2,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-import { JoyrideModule } from 'ngx-joyride';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ErrorInterceptor } from './core/helpers/error.interceptor';
@@ -17,7 +16,6 @@ import { LayoutModule } from './layout/layout.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    JoyrideModule.forRoot(),
     SweetAlert2Module.forRoot(),
     AppRoutingModule,
     LayoutModule
