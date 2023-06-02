@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "eaf28657-2e60-4156-8b60-4b6c924af923"
+    "analytics": null
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -20,10 +20,9 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "en-US",
+        "sourceLocale": "pt-BR",
         "locales": {
-          "es": "src/locale/messages.es.json",
-          "en": "src/locale/messages.json"
+          "br": "src/locale/messages.json"
         }
       },
       "architect": {
@@ -69,9 +68,9 @@
               ],
               "outputHashing": "all"
             },
-            "es": {
+            "br": {
               "localize": [
-                "es"
+                "pt-BR"
               ]
             },
             "en": {
